@@ -1,0 +1,16 @@
+{
+  "name": "ferrari---sito--",
+  "version": "1.0.0",
+  "description": "sito ferrari",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "simho",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "gsap": "^3.12.5"
+  }
+}

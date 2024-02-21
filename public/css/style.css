@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap');
+
+:root {
+
+  --navbar-text-color: #ffffff;
+  --navbar-bg-color: #000000;
+}
+ 
+::-webkit-scrollbar {
+  width: 10px; /* Larghezza della scrollbar */
+}
+
+/* Stili per il thumb della scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc; /* Colore di sfondo del thumb */
+  border-radius: 5px; /* Bordi arrotondati del thumb */
+}
+
+/* Stili per il thumb della scrollbar al passaggio del mouse */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #999999; /* Cambia il colore del thumb al passaggio del mouse */
+}
+:link{
+  text-decoration: none;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.block-y{
+  overflow-y: hidden;
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+.navbar {
+  z-index: 100;
+  width: 100%;
+  height: max-content;
+  position: fixed;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  background-color: var(--navbar-color);
+}
+.menu-toggle {
+  display: none; /* Nascondi il menu a comparsa per impostazione predefinita */
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--navbar-text-color);
+  margin-bottom: 5px;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.navbar-brand svg {
+  height: 50px;
+  width: auto;
+  fill: var(--navbar-text-color);
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.nav-item {
+  margin-inline: 10px;
+}
+
+
+.nav-link {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 5px 10px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.container-wrapper{
+  scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.container{
+  height: calc(100vh + 2px);
+  width: 100%;
+  scroll-snap-align: start;
+  
+}
+
+#hero {
+  position: relative;
+  background-image: url("/img/bg-hero.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: grid;
+  place-content: center;
+  z-index: 0;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Nero con opacità del 50% */
+  z-index: 1;
+}
+
+#hero h1 {
+  font-size: 10vw;
+  text-transform: uppercase;
+  color: var(--navbar-text-color); /* Il testo rimarrà bianco sopra l'overlay scuro */
+  z-index: 2;
+}
+
+#about {
+  background-color: #cccccc;
+  margin-top: auto;
+  padding-top: 5%;
+}
+
+#find{
+  background-color: #000;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#drive{
+  height: calc(100vh + 10px);
+}
+
+.car-carousel {
+  height: 100vh;
+  margin: 0;
+}
+/* Stili per le immagini all'interno delle celle */
+.car-uno img {
+  margin: 0;
+  display: block; /* Assicura che l'immagine sia visualizzata come blocco */
+  max-width: 100%; /* Assicura che l'immagine non superi la larghezza della cella */
+  height: auto; /* Imposta l'altezza dell'immagine in base alla larghezza per mantenere l'aspetto originale */
+}
+
+
+.car-uno {
+  margin: 0;
+  position: relative;
+  width: 70%;
+  display: grid;
+  place-content: center;
+}
+
+.car-uno p {
+  text-transform: uppercase;
+  font-weight: 800;
+  position: absolute; /* Imposta la posizione assoluta per il testo */
+  bottom: 0; /* Posiziona il testo a 10px dal basso della cella */
+  left: 0; /* Allinea il testo a sinistra all'interno della cella */
+  right: 0; /* Allinea il testo a destra all'interno della cella */
+  text-align: center; /* Centra il testo orizzontalmente */
+  color: white; /* Colore del testo */
+  padding:1rem; /* Aggiunge spazio intorno al testo */
+  font-size: 2rem;
+  margin: 0;
+}
+.about-wrapper {
+  height: 100%;
+  display:block;
+}
+
+
+
+.find-image {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.find-text {
+  color: #ffffff;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 50%;
+  padding: 20px;
+  border: 6px solid transparent;
+    border-image: linear-gradient(to right, green, white, red);
+    border-image-slice: 2;
+  height: auto;
+}
+
+.find-text h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
+.find-text p {
+  text-align: justify;
+  line-height: 1.3rem;
+}
+
+
+.text-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+
+
+.loader {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: white ;
+  position: absolute;
+}
+
+
+.loader-inner svg{
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media query per schermi più piccoli */
+@media screen and (max-width: 768px) {
+
+  .car-uno p {
+    height: 100%;
+  }
+
+  .car-uno{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center; /* Allinea il carosello al centro orizzontalmente */
+    align-items: center; /* Allinea il carosello al centro verticalmente */
+  }
+
+  
+  .find-wrapper {
+    padding: 5%;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+
+  .find-image {    
+    width: 100%;
+    height: auto;
+  }
+
+  .find-text {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+  }
+
+  .find-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  .find-text p {
+    line-height: 1.2rem;
+    text-align: center;
+  }
+
+  .navbar-nav {
+    display: none; /* Nascondi il menu principale su schermi più piccoli */
+  }
+
+  .menu-toggle {
+    display: block; /* Mostra il menu a comparsa su schermi più piccoli */
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  .navbar-brand{
+    width: 40px;
+  }
+  /* Aggiungi stili per il menu a comparsa attivo */
+  .menu-active .navbar-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    justify-content: space-around;
+
+  }
+
+  .menu-active .navbar-brand,
+  .menu-active .menu-toggle{
+    display: none;
+  }
+  .menu-active{
+    padding: 0;
+    margin: 0;
+
+    
+  }
+
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .menu-active .navbar-nav .nav-item a{
+    color: #000;
+    font-size: 1.4rem;
+  }
+}
+
+
