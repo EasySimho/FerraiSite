@@ -22,7 +22,7 @@ let lastScrollTop = container.scrollTop;
 document.addEventListener('scroll', function() {
   var scrollPosition = window.scrollY;
   var containerOffset = container.offsetTop;
-  var containerHeight = container.clientHeight;
+  var containerHeight = container.clientHeight - 10;
   var windowHeight = window.innerHeight;
   var scrollDirection = scrollPosition > prevScrollPosition ? 'down' : 'up';
   prevScrollPosition = scrollPosition;
